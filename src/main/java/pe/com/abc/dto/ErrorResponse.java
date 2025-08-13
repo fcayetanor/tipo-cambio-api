@@ -5,16 +5,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.math.BigDecimal;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class ExchangeRate {
-
-    private String fecha;
-    private BigDecimal sunat;
-    private BigDecimal compra;
-    private BigDecimal venta;
+public class ErrorResponse {
+    private String error;
+    private String message;
+    private String dni;
+    private Long consultasRealizadas;
 }

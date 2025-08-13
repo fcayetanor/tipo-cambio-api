@@ -1,16 +1,21 @@
 package pe.com.abc.resource;
 
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.QueryParam;
-import pe.com.abc.dto.ExchangeRate;
-
-import java.time.LocalDate;
+import jakarta.validation.Valid;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import pe.com.abc.dto.ExchangeRateRequest;
 
 @Path("/tipo-cambio")
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public interface ExchangeRateResource {
 
+    @POST
+    Response getExchangeRateToday(@Valid ExchangeRateRequest request);
+
     @GET
-    ExchangeRate getExchangeRateToday();
+    @Path("/consultas/{dni}")
+    Response getQueryCount(@PathParam("dni") String dni);
 
 }

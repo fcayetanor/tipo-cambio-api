@@ -12,7 +12,7 @@ public class ExchangeRateRepositoryImpl implements ExchangeRateRepository{
 
     private final ApiProxy apiProxy;
 
-    public ExchangeRateRepositoryImpl(@RestClient ApiProxy apiProxy){
+    public ExchangeRateRepositoryImpl(@RestClient ApiProxy apiProxy) {
         this.apiProxy = apiProxy;
     }
 
